@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.5)
+
+project(mini-tor LANGUAGES CXX)
+cmake_policy(SET CMP0091 NEW)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_definitions(-D_WINSOCK_DEPRECATED_NO_WARNINGS -D_CRT_SECURE_NO_WARNINGS -DWIN32_LEAN_AND_MEAN)
+set(CMAKE_MSVC_RUNTIME_LIBRARY_MINSIZEREL "MultiThreaded")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden -Wall")
+set(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_MINSIZEREL} /O1 /Ob1 /DNDEBUG /MT")
+
+option(BUILD_EXE ON "build application")
+add_subdirectory(src)

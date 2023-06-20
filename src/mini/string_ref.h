@@ -2,7 +2,7 @@
 #include <mini/string.h>
 #include <mini/byte_buffer_ref.h>
 
-#include <iosfwd> // std::char_traits
+#include <string> // std::char_traits
 
 namespace mini {
 
